@@ -1,0 +1,50 @@
+/* Centrado del formulario */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  /* Estilizar los items del formulario */
+  ion-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs con padding */
+  ion-input {
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+  
+  /* Botón de registro */
+  ion-button {
+    margin-top: 20px;
+  }
+  
+  /* Estilo de los mensajes de error */
+  .error-message {
+    color: #ff3b30;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Estilo para la barra de título */
+  ion-toolbar {
+    --background: #4a90e2;
+  }
+  
+  /* Título */
+  ion-title {
+    color: white;
+  }
+  
+  /* Estilo de las etiquetas */
+  ion-label {
+    color: #4a90e2;
+  }
+  

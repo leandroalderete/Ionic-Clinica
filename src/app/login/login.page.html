@@ -4,16 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form >
+<ion-content class="content-container">
+  <form>
     <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="email" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Password</ion-label>
-      <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="password" required></ion-input>
     </ion-item>
     <ion-button expand="full" type="submit">Login</ion-button>
+
+    <!-- Agregar un enlace para la recuperación de contraseña -->
+    <ion-button expand="full" color="light" (click)="forgotPassword()">Olvidé mi contraseña</ion-button>
+
+    <!-- Botón para redirigir al registro -->
+    <ion-button expand="full" fill="clear" (click)="navigateToRegister()">Registrate</ion-button>
   </form>
 </ion-content>

@@ -1,42 +1,66 @@
+/* Centrar todo el contenido de la página */
 ion-content {
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;      /* Centrado vertical */
+    height: 100vh;            /* Asegura que ocupe toda la altura de la pantalla */
+    padding: 0;
+  }
+  
+  /* Centrar el formulario */
+  .content-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    background-color: #f5f5f5; /* Color de fondo suave */
-  }
-  
-  form {
     width: 100%;
-    max-width: 400px;
-    background: #ffffff; /* Fondo blanco */
+    max-width: 400px; /* Limita el ancho del formulario para que no sea demasiado grande */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   }
   
+  /* Estilizar los items del formulario */
   ion-item {
+    width: 100%;
     margin-bottom: 15px;
   }
   
+  /* Asegurar que los inputs tengan un buen espaciado */
+  ion-input {
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+  
+  /* Estilo de los botones */
   ion-button {
     margin-top: 10px;
   }
   
+  /* Estilo para el enlace "Olvidé mi contraseña" */
+  ion-button[color="light"] {
+    --background: transparent;
+    --color: #007bff;
+    text-align: center;
+  }
+  
+  /* Botón de registro */
   ion-button[fill="clear"] {
-    color: #3880ff; /* Color azul para el enlace */
-    font-weight: bold;
-    text-decoration: underline;
+    --background: transparent;
+    --color: #007bff;
+    text-align: center;
   }
   
+  /* Estilo para la barra de título */
   ion-toolbar {
-    --background: #3880ff; /* Color del header */
-    --color: white; /* Texto blanco */
+    --background: #4a90e2;
   }
   
+  /* Título */
   ion-title {
-    font-weight: bold;
+    color: white;
   }
   
+  /* Estilo de los campos de entrada */
+  ion-label {
+    color: #4a90e2;
+  }
   

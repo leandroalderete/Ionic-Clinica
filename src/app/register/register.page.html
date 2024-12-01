@@ -1,13 +1,101 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="content-container">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">register</ion-title>
+      <ion-title size="large">Registro</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- Formulario de Registro -->
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <!-- Campo Nombre -->
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input
+        type="text"
+        name="firstName"
+        [(ngModel)]="firstName"
+        #firstNameInput="ngModel"
+        required
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="firstNameInput?.invalid && firstNameInput?.touched" class="error-message">
+      El nombre es obligatorio.
+    </div>
+
+    <!-- Campo Apellido -->
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input
+        type="text"
+        name="lastName"
+        [(ngModel)]="lastName"
+        #lastNameInput="ngModel"
+        required
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="lastNameInput?.invalid && lastNameInput?.touched" class="error-message">
+      El apellido es obligatorio.
+    </div>
+
+    <!-- Campo Correo -->
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        #emailInput="ngModel"
+        required
+        email
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="emailInput?.invalid && emailInput?.touched" class="error-message">
+      El correo es obligatorio y debe ser válido.
+    </div>
+
+    <!-- Campo Contraseña -->
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        #passwordInput="ngModel"
+        required
+        minlength="6"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="passwordInput?.invalid && passwordInput?.touched" class="error-message">
+      La contraseña es obligatoria y debe tener al menos 6 caracteres.
+    </div>
+
+    <!-- Confirmar Contraseña -->
+    <ion-item>
+      <ion-label position="floating">Confirmar Contraseña</ion-label>
+      <ion-input
+        type="password"
+        name="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        #confirmPasswordInput="ngModel"
+        required
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="confirmPasswordInput?.invalid && confirmPasswordInput?.touched" class="error-message">
+      La confirmación de contraseña es obligatoria.
+    </div>
+    <div *ngIf="confirmPassword && password && confirmPassword !== password" class="error-message">
+      Las contraseñas no coinciden.
+    </div>
+
+    <!-- Botón de Registro -->
+    <ion-button expand="full" type="submit" [disabled]="registerForm.invalid">
+      Registrar
+    </ion-button>
+  </form>
 </ion-content>

@@ -1,19 +1,30 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
-import { IonicModule } from '@ionic/angular'; // Importa IonicModule para usar componentes de Ionic
-import { FormsModule } from '@angular/forms'; // Importa FormsModule para usar ngModel
-import { CommonModule } from '@angular/common'; // Importa CommonModule
+import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true, // Especifica que es un standalone component
-  imports: [CommonModule, IonicModule, FormsModule,], // Asegúrate de incluir CommonModule
+  standalone: true,
+  imports: [CommonModule, IonicModule, FormsModule],
 })
 export class LoginPage {
   email = '';
   password = '';
 
+  constructor(private router: Router, ) {}
+
+  forgotPassword() {
+    // Lógica para redirigir a la página de recuperación de contraseña
+    console.log('Redirigiendo a la página de recuperación de contraseña...');
+    this.router.navigate(['/forgot-password']); // Asegúrate de tener esta ruta configurada
+  }
+
+  navigateToRegister() {
+    // Lógica para redirigir a la página de registro
+    this.router.navigate(['/register']); // Asegúrate de tener la ruta '/register' configurada
+  }
 }
