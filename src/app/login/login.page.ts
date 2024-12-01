@@ -16,14 +16,4 @@ export class LoginPage {
   email = '';
   password = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
-
-  async onLogin() {
-    try {
-      await this.authService.login(this.email, this.password);
-      this.router.navigate(['/chat']); // Redirige al chat después del login
-    } catch (error) {
-      console.error('Error al iniciar sesión:', error);
-    }
-  }
 }
