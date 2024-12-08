@@ -1,0 +1,55 @@
+/* Mensajes del usuario (alineados a la derecha) */
+.my-message {
+  text-align: right;
+  background-color: #d1f7c4; /* Verde claro pastel */
+  color: #2d2d2d; /* Texto gris oscuro */
+  border-radius: 15px 15px 0 15px; /* Bordes redondeados */
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  max-width: 80%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Mensajes del médico (alineados a la izquierda) */
+.other-message {
+  text-align: left;
+  background-color: #e8f0fe; /* Gris azul claro */
+  color: #1a1a1a; /* Texto azul oscuro */
+  border-radius: 15px 15px 15px 0; /* Bordes redondeados */
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  max-width: 80%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Contenedor general de mensajes */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaciado uniforme entre mensajes */
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #e0e0e0; /* Borde gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Nombre del usuario (en la parte superior del mensaje) */
+.user {
+  font-size: 0.75em; /* Texto pequeño */
+  color: #555; /* Gris medio */
+  margin: 0;
+  padding-bottom: 5px;
+  font-weight: bold;
+  text-align: left; /* Siempre alineado a la izquierda */
+}
+
+/* Botón de enviar mensaje */
+ion-button {
+  margin-left: 10px;
+  background-color: #007bff; /* Azul para el botón */
+  color: white;
+  border-radius: 20px; /* Botón redondeado */
+}

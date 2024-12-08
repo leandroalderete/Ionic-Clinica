@@ -5,21 +5,41 @@
 </ion-header>
 
 <ion-content class="content-container">
-  <form>
+  <form (ngSubmit)="onLogin()">
+    <!-- Campo Email -->
     <ion-item>
       <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="email" required></ion-input>
+      <ion-input
+        [(ngModel)]="email"
+        name="email"
+        type="email"
+        required>
+      </ion-input>
     </ion-item>
+
+    <!-- Campo Password -->
     <ion-item>
       <ion-label position="floating">Password</ion-label>
-      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="password" required></ion-input>
+      <ion-input
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+        required>
+      </ion-input>
     </ion-item>
+
+    <!-- Botón Login -->
     <ion-button expand="full" type="submit">Login</ion-button>
 
-    <!-- Agregar un enlace para la recuperación de contraseña -->
-    <ion-button expand="full" color="light" (click)="forgotPassword()">Olvidé mi contraseña</ion-button>
+    <!-- Enlace para recuperación de contraseña -->
+   <!-- <ion-button expand="full" color="light" (click)="forgotPassword()">Olvidé mi contraseña</ion-button>-->
 
-    <!-- Botón para redirigir al registro -->
+    <!-- Botón para registro -->
     <ion-button expand="full" fill="clear" (click)="navigateToRegister()">Registrate</ion-button>
+
+    <!-- Mensaje de error -->
+    <ion-text color="danger" *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
+    </ion-text>
   </form>
 </ion-content>

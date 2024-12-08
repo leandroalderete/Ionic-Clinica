@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat con el médico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="chat-content">
+  <div class="messages-container">
+    <!-- Mostrar los mensajes del chat -->
+    <div *ngFor="let message of messages" 
+      [class.my-message]="message.senderId === currentUserId" 
+      [class.other-message]="message.senderId !== currentUserId">
+      <p class="user">{{ message.user }}</p>
+      <p>{{ message.text }}</p>
+    </div>
+  </div>
+
+  <!-- Campo para escribir un nuevo mensaje -->
+  <ion-item>
+    <ion-input 
+      [(ngModel)]="userMessage" 
+      placeholder="Escribe tu mensaje" 
+      type="text" 
+      (keydown.enter)="sendMessage()">
+    </ion-input>
+    <ion-button (click)="sendMessage()" color="primary">Enviar</ion-button>
+  </ion-item>
+</ion-content>

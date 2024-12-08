@@ -1,66 +1,90 @@
 /* Centrar todo el contenido de la página */
 ion-content {
-    display: flex;
-    justify-content: center;  /* Centrado horizontal */
-    align-items: center;      /* Centrado vertical */
-    height: 100vh;            /* Asegura que ocupe toda la altura de la pantalla */
-    padding: 0;
+  display: flex;
+  justify-content: center;  /* Centrado horizontal */
+  align-items: center;      /* Centrado vertical */
+  height: 100vh;            /* Asegura que ocupe toda la altura de la pantalla */
+  padding: 0;
+}
+
+/* Centrar el formulario */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Limita el ancho del formulario para que no sea demasiado grande */
+  padding: 20px;
+}
+
+/* Estilizar los items del formulario */
+ion-item {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Asegurar que los inputs tengan un buen espaciado */
+ion-input {
+  --padding-start: 10px;
+  --padding-end: 10px;
+}
+
+/* Estilo de los botones */
+ion-button {
+  margin-top: 10px;
+}
+
+/* Estilo para el enlace "Olvidé mi contraseña" */
+ion-button[color="light"] {
+  --background: transparent;
+  --color: #007bff;
+  text-align: center;
+}
+
+/* Botón de registro */
+ion-button[fill="clear"] {
+  --background: transparent;
+  --color: #007bff;
+  text-align: center;
+}
+
+/* Estilo para la barra de título */
+ion-toolbar {
+  --background: #4a90e2;
+}
+
+/* Título */
+ion-title {
+  color: white;
+}
+
+/* Estilo de los campos de entrada */
+ion-label {
+  color: #4a90e2;
+}
+
+/* Estilo para el mensaje de error */
+ion-text[color="danger"] {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffcccc; /* Fondo rojo claro */
+  border-radius: 8px; /* Bordes redondeados */
+  color: #e60000; /* Color de texto rojo */
+  font-size: 16px; /* Tamaño de fuente */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  width: 100%; /* Ancho completo */
+  max-width: 350px; /* Limitar ancho */
+  animation: fadeIn 0.5s ease-in-out; /* Animación de aparición */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  /* Centrar el formulario */
-  .content-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 400px; /* Limita el ancho del formulario para que no sea demasiado grande */
-    padding: 20px;
+  100% {
+    opacity: 1;
   }
-  
-  /* Estilizar los items del formulario */
-  ion-item {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  /* Asegurar que los inputs tengan un buen espaciado */
-  ion-input {
-    --padding-start: 10px;
-    --padding-end: 10px;
-  }
-  
-  /* Estilo de los botones */
-  ion-button {
-    margin-top: 10px;
-  }
-  
-  /* Estilo para el enlace "Olvidé mi contraseña" */
-  ion-button[color="light"] {
-    --background: transparent;
-    --color: #007bff;
-    text-align: center;
-  }
-  
-  /* Botón de registro */
-  ion-button[fill="clear"] {
-    --background: transparent;
-    --color: #007bff;
-    text-align: center;
-  }
-  
-  /* Estilo para la barra de título */
-  ion-toolbar {
-    --background: #4a90e2;
-  }
-  
-  /* Título */
-  ion-title {
-    color: white;
-  }
-  
-  /* Estilo de los campos de entrada */
-  ion-label {
-    color: #4a90e2;
-  }
-  
+}

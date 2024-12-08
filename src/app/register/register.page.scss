@@ -48,3 +48,32 @@
     color: #4a90e2;
   }
   
+  /* Estilos para el mensaje de éxito */
+  .success-message {
+    color: #4CAF50; /* Verde para indicar éxito */
+    background-color: #e8f5e9; /* Fondo suave verde */
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2); /* Sombra suave */
+  }
+  
+  /* Animación para mostrar el mensaje de éxito */
+  .success-message {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
